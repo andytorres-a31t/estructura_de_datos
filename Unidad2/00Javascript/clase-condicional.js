@@ -54,3 +54,14 @@ switch (dia) { // Evalúa el valor de la variable 'dia'
     default:
         console.log("Día no válido");
 }
+
+
+//EN CLASE
+
+if (nombre === "Juan") {
+    console.log("Hola Juan");
+} else if (otraCondición) {
+    // Código a ejecutar si la condición es falsa
+}else {
+    // Código a ejecutar si todas las condiciones anteriores son falsas
+}

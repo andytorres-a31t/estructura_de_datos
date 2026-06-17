@@ -15,11 +15,11 @@
 html en blanco hacer
 */
 
-//== Igualdad
 const a = 51
 const b = '51'
 const c = 10
 
+//== Igualdad
 console.log(a == b) // Output: true (compara solo el valor, no el tipo),
 // dado que ambos tienen el mismo valor numérico aunque uno es string y otro es number
 
@@ -40,7 +40,7 @@ console.log(a > 3) // Output: true , porque 51 es mayor que 3
 
 //< Menor que
 console.log(a < 10) // Output: false , porque 51 es mayor que 10, entonces la comparación a < 10 es falsa
-//>= Mayor o igual que
+//>= Mayor o igual que 
 console.log(a >= 5) // Output: true , porque 51 es mayor que 5, entonces la comparación a >= 5 es verdadera,
 //  pero si fuera 5 también sería verdadera
 
