@@ -13,7 +13,6 @@ class ColaTurnos {
     this.contadorId = 1;
   }
 
-  // Encolar: registrar un nuevo cliente al final de la cola
   registrarTurno(nombreCliente, motivo) {
     const turno = new Turno(this.contadorId++, nombreCliente, motivo);
     this.items.push(turno);
@@ -21,7 +20,6 @@ class ColaTurnos {
     return turno;
   }
 
-  // Desencolar: atender al cliente que lleva más tiempo esperando
   atenderSiguiente() {
     if (this.estaVacia()) {
       console.log("No hay clientes en espera.");
@@ -32,7 +30,6 @@ class ColaTurnos {
     return turno;
   }
 
-  // Ver quién sigue sin sacarlo de la cola
   siguienteEnEspera() {
     if (this.estaVacia()) {
       console.log("No hay clientes en espera.");
@@ -54,35 +51,14 @@ class ColaTurnos {
       console.log("La cola de turnos está vacía.");
       return;
     }
+
     console.log("Cola de turnos actual:");
     this.items.forEach((turno, index) => {
       console.log(
-        `  ${index + 1}. Turno #${turno.id} - ${turno.nombreCliente} (${turno.motivo}) - Registrado a las ${turno.horaRegistro}`
+        `${index + 1}. Turno #${turno.id} - ${turno.nombreCliente} (${turno.motivo}) - ${turno.horaRegistro}`
       );
     });
   }
 }
 
-// ----------------------
-// Simulación de uso
-// ----------------------
-const colaAtencion = new ColaTurnos();
-
-colaAtencion.registrarTurno("Ana Pérez", "Apertura de cuenta");
-colaAtencion.registrarTurno("Luis Gómez", "Reclamo de cobro");
-colaAtencion.registrarTurno("María Torres", "Consulta de saldo");
-
-colaAtencion.mostrarCola();
-
-console.log("\n--- Inicia atención ---\n");
-
-colaAtencion.atenderSiguiente(); // Atiende a Ana Pérez (la primera en llegar)
-colaAtencion.mostrarCola();
-
-colaAtencion.atenderSiguiente(); // Atiende a Luis Gómez
-
-console.log("\nSiguiente en espera:", colaAtencion.siguienteEnEspera());
-
-console.log("\nTamaño actual de la cola:", colaAtencion.tamano());
-
-module.exports = { ColaTurnos, Turno };
+module.exports = { ColaTurnos };
